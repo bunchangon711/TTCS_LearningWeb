@@ -226,27 +226,24 @@ const CourseDetails = ({
 							</div>
 							<div className='flex items-center'>
 								{isPurchased || isAdmin ? (
+								<Link href={`/course-access/${data._id}`}>
 									<Button
-										variant='flat'
-										color='danger'
-										className={`  my-3 cursor-pointer]`}
+									variant='flat'
+									color='danger'
+									className='my-3 cursor-pointer'
 									>
-										<Link
-											className={`  cursor-pointer `}
-											href={`/course-access/${data._id}`}
-										>
-											Vào khóa học
-										</Link>
+									Vào khóa học
 									</Button>
+								</Link>
 								) : (
-									<Button
-										variant='flat'
-										color='danger'
-										className={`  my-3 cursor-pointer]`}
-										onClick={handleOrder}
-									>
-										Buy Now {data.price} VND
-									</Button>
+								<Button
+									variant='flat'
+									color='danger'
+									className='my-3 cursor-pointer'
+									onClick={handleOrder}
+								>
+									Mua khóa học {data.price} VND
+								</Button>
 								)}
 							</div>
 							<br />

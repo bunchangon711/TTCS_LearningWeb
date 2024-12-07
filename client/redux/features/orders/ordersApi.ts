@@ -22,7 +22,7 @@ export const ordersApi = apiSlice.injectEndpoints({
         url: "payment",
         method: "POST",
         body: {
-          amount,
+          amount: amount,
         },
         credentials: "include" as const,
       }),

@@ -73,20 +73,41 @@ const CheckOutForm = ({ data, user, refetch }: CheckOutFormProps) => {
 
 	return (
 		<form id='payment-form' onSubmit={handleSubmit}>
-			<LinkAuthenticationElement id='link-authentication-element' />
-
-			<PaymentElement id='payment-element' />
-			<button disabled={isLoading || !stripe || !elements} id='submit'>
-				<span id='button-text' className={` mt-2 !h-[35px]`}>
-					{isLoading ? "Paying..." : "Pay now"}
-				</span>
-			</button>
-
-			{message && (
-				<div id='payment-message' className='text-[red] font-Poppins pt-2'>
-					{message}
-				</div>
-			)}
+		  <LinkAuthenticationElement 
+			id='link-authentication-element'
+			options={{
+			  defaultValues: {
+				email: user?.email || '',
+			  }
+			}}
+		  />
+		  <PaymentElement 
+			id='payment-element'
+			options={{
+			  fields: {
+				billingDetails: {
+				  name: 'auto',
+				  email: 'auto',
+				}
+			  },
+			  layout: {
+				type: 'tabs',
+				defaultCollapsed: false,
+				radios: false,
+				spacedAccordionItems: false
+			  }
+			}}
+		  />
+		  <button disabled={isLoading || !stripe || !elements} id='submit'>
+			<span id='button-text' className={` mt-2 !h-[35px]`}>
+			  {isLoading ? "Đang xử lý..." : "Thanh toán ngay"}
+			</span>
+		  </button>
+		  {message && (
+			<div id='payment-message' className='text-[red] font-Poppins pt-2'>
+			  {message}
+			</div>
+		  )}
 		</form>
 	);
 };

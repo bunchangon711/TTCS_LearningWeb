@@ -158,8 +158,8 @@ const CourseInformation: FC<Props> = ({
 								labelPlacement='outside'
 								type='number'
 								variant='bordered'
-								label='Course Price'
-								placeholder='499'
+								label='Course Sale Price'
+								placeholder='150000'
 								value={courseInfo.price}
 								onChange={(e: any) =>
 									setCourseInfo({ ...courseInfo, price: e.target.value })
@@ -174,8 +174,8 @@ const CourseInformation: FC<Props> = ({
 								labelPlacement='outside'
 								type='number'
 								variant='bordered'
-								label='Estimated Name (optional)'
-								placeholder='599'
+								label='Course original price'
+								placeholder='200000'
 								value={courseInfo.estimatedPrice}
 								onChange={(e: any) =>
 									setCourseInfo({

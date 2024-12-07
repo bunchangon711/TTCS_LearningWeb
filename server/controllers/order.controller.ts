@@ -137,24 +137,24 @@ export const sendStripePublishableKey = CatchAsyncError(
 
 export const newPayment = CatchAsyncError(
 	async (req: Request, res: Response, next: NextFunction) => {
-		try {
-			const myPayment = await stripe.paymentIntents.create({
-				amount: req.body.amount,
-				currency: "INR",
-				metadata: {
-					company: "E-Learning",
-				},
-				automatic_payment_methods: {
-					enabled: true,
-				},
-			});
-
-			res.status(201).json({
-				success: true,
-				client_secret: myPayment.client_secret,
-			});
-		} catch (error: any) {
-			return next(new ErrorHandler(error.message, 500));
-		}
+	  try {
+		const myPayment = await stripe.paymentIntents.create({
+		  amount: parseInt(req.body.amount) / 100,
+		  currency: "vnd",
+		  metadata: {
+			company: "Learning corner",
+		  },
+		  automatic_payment_methods: {
+			enabled: true,
+		  },
+		});
+  
+		res.status(201).json({
+		  success: true,
+		  client_secret: myPayment.client_secret,
+		});
+	  } catch (error: any) {
+		return next(new ErrorHandler(error.message, 500));
+	  }
 	}
-);
+  );

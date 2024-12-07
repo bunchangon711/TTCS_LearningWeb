@@ -61,7 +61,7 @@ const CourseDetailsPage = ({ id }: CourseDetailsPageProps) => {
 					<Heading
 						title={`${data.course.name} - E-Learning`}
 						description={
-							"E-Learning is a programming community which is developed by Alireza Rastineh for helping programmers"
+							"Learning corner is an online learning platform that offers a wide range of courses to help you achieve your goals."
 						}
 						keywords={data?.course?.tags}
 					/>

@@ -1,55 +1,37 @@
-import React, { FC, useEffect, useState } from "react";
-import axios from "axios";
+import React, { FC } from "react";
 
 type Props = {
-	videoUrl: string;
-	title: string;
+  videoUrl: string;
+  title: string;
 };
 
 const CoursePlayer: FC<Props> = ({ videoUrl, title }) => {
-	const [videoData, setVideoData] = useState({
-		otp: "",
-		playbackInfo: "",
-	});
+  const getYoutubeVideoId = (url: string) => {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return match && match[2].length === 11 ? match[2] : null;
+  };
 
-	useEffect(() => {
-		axios
-			.post("http://localhost:8000/api/v1/getVdoCipherOTP", {
-				videoId: videoUrl,
-			})
-			.then((res) => {
-				setVideoData(res.data);
-			});
-	}, [videoUrl]);
+  const videoId = getYoutubeVideoId(videoUrl);
 
-	return (
-		<>
-			<div
-				style={{
-					position: "relative",
-					paddingTop: "56.25%",
-					overflow: "hidden",
-				}}
-			>
-				{videoData.otp && videoData.playbackInfo !== "" && (
-					<iframe
-						src={`https://player.vdocipher.com/v2/?otp=${videoData?.otp}&playbackInfo=${videoData.playbackInfo}&player=v1C4KBMwW4LqQDWm`}
-						style={{
-							position: "absolute",
-							top: 0,
-							left: 0,
-							width: "100%",
-							height: "100%",
-							borderRadius: "16px",
-							border: 0,
-						}}
-						allowFullScreen={true}
-						allow='encrypted-media'
-					/>
-				)}
-			</div>
-		</>
-	);
+  return (
+    <div style={{ position: "relative", paddingTop: "56.25%", overflow: "hidden" }}>
+      <iframe
+        src={`https://www.youtube.com/embed/${videoId}`}
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          borderRadius: "16px",
+          border: 0,
+        }}
+        allowFullScreen={true}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      />
+    </div>
+  );
 };
 
 export default CoursePlayer;
