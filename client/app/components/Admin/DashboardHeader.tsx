@@ -42,7 +42,7 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
 	const [audio] = useState<any>(
 		typeof window !== "undefined" &&
 			new Audio(
-				"https://res.cloudinary.com/dwglmyvi3/video/upload/v1711552482/notification/hey_-it_s-me_-goku_-made-with-Voicemod_ow0b1v.mp3"
+				"https://res.cloudinary.com/dccwkb00z/video/upload/f_auto:video,q_auto/blol1sioybbqf63elb0t"
 			)
 	);
 
@@ -79,27 +79,22 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
 		<div className='flex justify-end gap-4'>
 			<Dropdown placement='bottom-end'>
 				<DropdownTrigger>
-					{/* <Avatar
-						isBordered
-						as='button'
-						className='transition-transform'
-						src='https://i.pravatar.cc/150?u=a042581f4e29026704d'
-					/> */}
-					<Badge
-						content={notifications && notifications.length}
-						shape='circle'
-						color='danger'
-						className='cursor-pointer'
+					<Button
+					radius='full'
+					variant='light'
+					className="flex items-center gap-2"
 					>
-						<Button
-							radius='full'
-							isIconOnly
-							aria-label='more than 99 notifications'
-							variant='light'
+					<span>Thông báo</span>
+					<div className="relative">
+						<Badge
+							content={notifications && notifications.length}
+							shape='circle'
+							color='danger'
 						>
-							<NotificationIcon size={24} />
-						</Button>
-					</Badge>
+						<NotificationIcon size={24} />
+						</Badge>
+					</div>
+					</Button>
 				</DropdownTrigger>
 
 				<DropdownMenu
@@ -109,7 +104,7 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
 				>
 					<DropdownItem className='h-14 gap-2' isReadOnly>
 						<p className='font-semibold p-3 flex justify-center'>
-							Notifications
+							Danh sách thông báo
 						</p>
 						<Divider />
 					</DropdownItem>

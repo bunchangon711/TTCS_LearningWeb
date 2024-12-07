@@ -203,8 +203,8 @@ export const addQuestion = CatchAsyncError(
 
 			await NotificationModel.create({
 				user: req.user?._id,
-				title: "New Question Received",
-				message: `You have a new question in ${courseContent?.title}`,
+				title: "Câu hỏi mới",
+				message: `Câu hỏi mới trong bài ${courseContent?.title}`,
 			});
 
 			await course?.save();
@@ -268,8 +268,8 @@ export const addAnswer = CatchAsyncError(
 			if (req.user?._id === question.user._id) {
 				await NotificationModel.create({
 					user: req.user?._id,
-					title: "New Question Reply Received",
-					message: `You have a new question reply in ${courseContent.title}`,
+					title: "Phản hồi mới",
+					message: `Nhận được phản hồi mới trong ${courseContent.title}`,
 				});
 			} else {
 				const data = {

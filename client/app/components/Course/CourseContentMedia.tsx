@@ -134,8 +134,8 @@ const CourseContentMedia = ({
 			setQuestion("");
 			refetch();
 			socketId.emit("notification", {
-				title: `New Question Received`,
-				message: `You have a new question in ${data[activeVideo].title}`,
+				title: `Câu hỏi mới`,
+				message: `Câu hỏi mới trong khóa học ${data[activeVideo].title}`,
 				userId: user._id,
 			});
 		}
@@ -167,8 +167,8 @@ const CourseContentMedia = ({
 			setRating(1);
 			courseRefetch();
 			socketId.emit("notification", {
-				title: `New Question Received`,
-				message: `You have a new question in ${data[activeVideo].title}`,
+				title: `Câu hỏi mới`,
+				message: `Câu hỏi mới trong khóa học ${data[activeVideo].title}`,
 				userId: user._id,
 			});
 		}
