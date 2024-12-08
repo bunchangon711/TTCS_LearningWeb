@@ -148,21 +148,6 @@ const Sidebar = () => {
 					{!isCollapsed && (
 						<Box mb='25px'>
 							<Box display='flex' justifyContent='center' alignItems='center'>
-								{/* <Image
-									alt='profile-user'
-									width={100}
-									height={100}
-									src={
-										user.avatar
-											? user.avatar.url
-											: "https://res.cloudinary.com/kouroshrstn/image/upload/v1707293133/Avatars/avatar_dwjgxo.png"
-									}
-									style={{
-										cursor: "pointer",
-										borderRadius: "50%",
-										border: "3px solid #5b6fe6",
-									}}
-								/> */}
 								<Avatar
 									src={
 										user.avatar

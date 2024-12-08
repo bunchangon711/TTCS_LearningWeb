@@ -354,9 +354,9 @@ const CourseContent: FC<Props> = ({
 															<Input
 																labelPlacement='outside'
 																type='text'
-																label='Source Code '
+																label='Document title'
 																variant='bordered'
-																placeholder='Source Code... {Link Title}'
+																placeholder='Project Plan...'
 																required
 																className='cursor-no-drop my-10 '
 																value={link.title}
@@ -370,9 +370,9 @@ const CourseContent: FC<Props> = ({
 															<Input
 																labelPlacement='outside'
 																type='text'
-																label='Source Code  URL '
+																label='Document  URL '
 																variant='bordered'
-																placeholder='Source Code... {Link URL}'
+																placeholder='drive.google.com/...'
 																required
 																className='cursor-no-drop'
 																value={link.url}

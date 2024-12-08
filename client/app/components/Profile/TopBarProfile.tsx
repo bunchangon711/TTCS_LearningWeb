@@ -163,7 +163,7 @@ const TopBarProfile: FC<Props> = ({ user, active, setActive, avatar }) => {
 							title={
 								<div className='flex items-center space-x-2'>
 									<AdminPanelSettingsRoundedIcon />
-									<span>Admin Dashboard</span>
+									<span>Dashboard</span>
 								</div>
 							}
 							href={"/admin"}

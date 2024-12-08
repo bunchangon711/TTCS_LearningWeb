@@ -87,19 +87,19 @@ const CoursePreview: FC<Props> = ({
 				</div>
 				<p>
 					<VerifiedRoundedIcon className='text-blue-600 mr-3 ' />
-					Source Code included
+					Bao gồm đầy đủ tài liệu
 				</p>
 				<p>
 					<VerifiedRoundedIcon className='text-blue-600 mr-3 ' />
-					full life time access
+					Quyền truy cập trọn đời
 				</p>
 				<p>
 					<VerifiedRoundedIcon className='text-blue-600 mr-3 ' />
-					Cretificate of completion
+					Chứng chỉ hoàn thành
 				</p>
 				<p>
 					<VerifiedRoundedIcon className='text-blue-600 mr-3 ' />
-					Premium support
+					Hỗ trợ 24/7
 				</p>
 				<Divider />
 				<h1 className='font-[600] text-[25px]'>{courseData?.name}</h1>
