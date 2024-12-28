@@ -55,7 +55,7 @@ const Reviews = ({}: ReviewsProps) => {
 	return (
 		<div className='w-[90%] 800px:w-[85%] m-auto'>
 			<div
-				className='w-full lg:flex  sm:flex
+				className='mt-44 w-full lg:flex  sm:flex
                 lg:flex-row
 
             items-center'
@@ -90,7 +90,7 @@ const Reviews = ({}: ReviewsProps) => {
 			<div className={`${title()} text-center w-full`}>
 				<h3>
 				<br />
-					Các đánh giá của các học viên
+					Đánh giá của các khóa học
 				</h3>
 			</div>
 

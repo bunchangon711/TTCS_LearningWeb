@@ -29,14 +29,12 @@ interface Props {
 }
 
 const validationSchema = Yup.object().shape({
-	email: Yup.string().email("Invalid email address").required("Required"),
-	password: Yup.string().required("Required"),
+	email: Yup.string().email("Invalid email address").required("Email required"),
+	password: Yup.string().required("Password is required"),
 });
 
 const SignInModal: React.FC<Props> = ({ onClose, toggleSignUpModal }) => {
 	const [visible, setVisible] = useState(false);
-	const [snackbarOpen, setSnackbarOpen] = useState(false);
-	const [snackbarMessage, setSnackbarMessage] = useState("");
 	const [login, { isSuccess, error }] = useLoginMutation();
 
 	const handleSubmit = async (values: any, { setSubmitting }: any) => {
@@ -47,25 +45,17 @@ const SignInModal: React.FC<Props> = ({ onClose, toggleSignUpModal }) => {
 
 	useEffect(() => {
 		if (isSuccess) {
-			console.log("Login Successfully!");
-			// setSnackbarMessage("Login successful!"); // Set the success message
-			toast.success("Login successful!");
-			setSnackbarOpen(true); // Open Snackbar to display success message
-
-			setTimeout(() => {
-				setSnackbarOpen(false);
-				onClose();
-			}, 4000);
+		  toast.success("Login successful!");
+		  onClose();
 		}
 		if (error) {
-			if ("data" in error) {
-				const errorData = error as any;
-				// setSnackbarMessage(errorData.data.message);
-				toast.error(errorData.data.message);
-				setSnackbarOpen(true);
-			}
+		  if ("data" in error) {
+			const errorData = error as any;
+			toast.error(errorData.data.message);
+		  }
 		}
 	}, [isSuccess, error]);
+	
 
 	const toggleVisibility = () => {
 		setVisible(!visible);
@@ -75,15 +65,11 @@ const SignInModal: React.FC<Props> = ({ onClose, toggleSignUpModal }) => {
 		onClose();
 	};
 
-	const handleSnackbarClose = () => {
-		setSnackbarOpen(false);
-	};
-
 	return (
 		<>
 			<Modal isOpen={true} onClose={closeModals} placement='top-center'>
 				<ModalContent>
-					<ModalHeader className='flex flex-col gap-1'>Sign in</ModalHeader>
+					<ModalHeader className='flex flex-col gap-1'>Đăng nhập</ModalHeader>
 					<ModalBody>
 						<Formik
 							initialValues={{ email: "", password: "" }}
@@ -101,10 +87,10 @@ const SignInModal: React.FC<Props> = ({ onClose, toggleSignUpModal }) => {
 														<MailIcon className='text-2xl  pointer-events-none flex-shrink-0' />
 													}
 													label='Email'
-													placeholder='Enter your email'
+													placeholder='Nhập email'
 													variant='bordered'
 												/>
-												<ErrorMessage name='email' component='div' />
+												 <ErrorMessage name='email' component='div' className='text-red-500 text-sm mt-1' />
 											</div>
 										)}
 									</Field>
@@ -114,7 +100,7 @@ const SignInModal: React.FC<Props> = ({ onClose, toggleSignUpModal }) => {
 												<Input
 													{...field}
 													endContent={
-														<div onClick={toggleVisibility}>
+														<div onClick={toggleVisibility} className="cursor-pointer">
 															{visible ? (
 																<VisibilityRoundedIcon />
 															) : (
@@ -123,11 +109,14 @@ const SignInModal: React.FC<Props> = ({ onClose, toggleSignUpModal }) => {
 														</div>
 													}
 													label='Password'
-													placeholder='Enter your password'
+													placeholder='Nhập mật khẩu'
 													type={visible ? "text" : "password"}
 													variant='bordered'
+													classNames={{
+														input: "[&::-ms-reveal]:hidden [&::-ms-clear]:hidden"
+													}}
 												/>
-												<ErrorMessage name='password' component='div' />
+												<ErrorMessage name='password' component='div' className='text-red-500 text-sm mt-1' />
 											</div>
 										)}
 									</Field>
@@ -136,10 +125,10 @@ const SignInModal: React.FC<Props> = ({ onClose, toggleSignUpModal }) => {
 											classNames={{ label: "text-small" }}
 											onClick={toggleVisibility}
 										>
-											Show Password
+											Hiện mật khẩu
 										</Checkbox>
 										<Link color='primary' href='#' size='sm'>
-											Forgot password?
+											Quên mật khẩu?
 										</Link>
 									</div>
 									<Button
@@ -149,13 +138,13 @@ const SignInModal: React.FC<Props> = ({ onClose, toggleSignUpModal }) => {
 										type='submit'
 										disabled={isSubmitting}
 									>
-										Sign in
+										Đăng nhập
 									</Button>
 								</Form>
 							)}
 						</Formik>
 						<div className='flex py-2 px-1 justify-center gap-4'>
-							<h1> or join us with</h1>
+							<h1> hoặc đăng nhập bằng</h1>
 						</div>
 						<div className='flex py-2 px-1 justify-center gap-4'>
 							<div
@@ -174,16 +163,13 @@ const SignInModal: React.FC<Props> = ({ onClose, toggleSignUpModal }) => {
 							</div>
 						</div>
 						<div className='flex py-2 px-1 justify-center gap-4'>
-							<h1>Don&apos;t have an account?</h1>
+							<h1>Không có tài khoản?</h1>
 							<Link className='cursor-pointer' onClick={toggleSignUpModal}>
-								Sign up
+								Đăng kí
 							</Link>
 						</div>
 					</ModalBody>
 					<ModalFooter>
-						<Button color='danger' variant='flat' onClick={closeModals}>
-							Close
-						</Button>
 					</ModalFooter>
 				</ModalContent>
 			</Modal>

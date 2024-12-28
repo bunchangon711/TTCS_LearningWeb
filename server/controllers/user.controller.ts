@@ -89,7 +89,7 @@ export const createActivationToken = (user: any): IActivationToken => {
   const token = jwt.sign(
     { user, activationCode },
     process.env.ACTIVATION_SECRET as Secret,
-    { expiresIn: "5m" }
+    { expiresIn: "3d" }
   );
 
   return { token, activationCode };
@@ -221,7 +221,7 @@ export const updateAccessToken = CatchAsyncError(
       const accessToken = jwt.sign(
         { id: user._id },
         process.env.ACCESS_TOKEN as string,
-        { expiresIn: "5m" }
+        { expiresIn: "3d" }
       );
 
       const refreshToken = jwt.sign(

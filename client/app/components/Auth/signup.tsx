@@ -42,9 +42,6 @@ const SignupModal: React.FC<Props> = ({
 }: Props) => {
 	const [visible, setVisible] = useState(false);
 	const [showVerificationModal, setShowVerificationModal] = useState(false);
-	const [snackbarOpen, setSnackbarOpen] = useState(false);
-	const [snackbarMessage, setSnackbarMessage] = useState("");
-	const [snackbarError, setSnackbarError] = useState("");
 	const [register, { data, error, isSuccess }] = useRegisterMutation();
 
 	useEffect(() => {
@@ -56,7 +53,6 @@ const SignupModal: React.FC<Props> = ({
 			console.log(message);
 			// setSnackbarMessage(message);
 			toast.success(message);
-			setSnackbarOpen(true);
 		}
 		if (error) {
 			if ("data" in error) {
@@ -64,14 +60,9 @@ const SignupModal: React.FC<Props> = ({
 				console.log(errorData.data.message);
 				// setSnackbarError(errorData.data.message);
 				toast.error(errorData.data.message);
-				setSnackbarOpen(true);
 			}
 		}
 	}, [isSuccess, error]);
-
-	const handleSnackbarClose = () => {
-		setSnackbarOpen(false);
-	};
 
 	const handleSignupSubmit = async (values: any, { setSubmitting }: any) => {
 		console.log("Form submitted:", values);
@@ -102,7 +93,7 @@ const SignupModal: React.FC<Props> = ({
 		<>
 			<Modal isOpen={true} onClose={closeModals} placement='top-center'>
 				<ModalContent>
-					<ModalHeader className='flex flex-col gap-1'>Sign up</ModalHeader>
+					<ModalHeader className='flex flex-col gap-1'>Đăng kí</ModalHeader>
 					<ModalBody>
 						<Formik
 							initialValues={{ name: "", email: "", password: "" }}
@@ -119,10 +110,10 @@ const SignupModal: React.FC<Props> = ({
 													autoFocus={true}
 													endContent={<FaceIcon />}
 													label='Name'
-													placeholder='Enter your name'
+													placeholder='Nhập họ và tên'
 													variant='bordered'
 												/>
-												<ErrorMessage name='name' component='div' />
+												<ErrorMessage name='name' component='div' className='text-red-500 text-sm mt-1' />
 											</div>
 										)}
 									</Field>
@@ -136,10 +127,10 @@ const SignupModal: React.FC<Props> = ({
 														<MailIcon className='text-2xl  pointer-events-none flex-shrink-0' />
 													}
 													label='Email'
-													placeholder='Enter your email'
+													placeholder='Nhập email'
 													variant='bordered'
 												/>
-												<ErrorMessage name='email' component='div' />
+												<ErrorMessage name='email' component='div' className='text-red-500 text-sm mt-1' />
 											</div>
 										)}
 									</Field>
@@ -149,7 +140,7 @@ const SignupModal: React.FC<Props> = ({
 												<Input
 													{...field}
 													endContent={
-														<div onClick={toggleVisibility}>
+														<div onClick={toggleVisibility} className="cursor-pointer">
 															{visible ? (
 																<VisibilityRoundedIcon />
 															) : (
@@ -158,11 +149,14 @@ const SignupModal: React.FC<Props> = ({
 														</div>
 													}
 													label='Password'
-													placeholder='Enter your password'
+													placeholder='Nhập mật khẩu'
 													type={visible ? "text" : "password"}
 													variant='bordered'
+													classNames={{
+														input: "[&::-ms-reveal]:hidden [&::-ms-clear]:hidden"
+													}}
 												/>
-												<ErrorMessage name='password' component='div' />
+												<ErrorMessage name='password' component='div' className='text-red-500 text-sm mt-1' />
 											</div>
 										)}
 									</Field>
@@ -171,7 +165,7 @@ const SignupModal: React.FC<Props> = ({
 											classNames={{ label: "text-small" }}
 											onClick={toggleVisibility}
 										>
-											Show Password
+											Hiện mật khẩu
 										</Checkbox>
 									</div>
 									<Button
@@ -180,13 +174,13 @@ const SignupModal: React.FC<Props> = ({
 										type='submit'
 										disabled={isSubmitting}
 									>
-										Sign up
+										Đăng kí
 									</Button>
 								</Form>
 							)}
 						</Formik>
 						<div className='flex py-2 px-1 justify-center gap-4'>
-							<h1> or join us with</h1>
+							<h1> hoặc đăng nhập bằng</h1>
 						</div>
 						<div className='flex py-2 px-1 justify-center gap-4'>
 							{/* Add icons for Google and GitHub */}
@@ -194,16 +188,13 @@ const SignupModal: React.FC<Props> = ({
 							<GitHubIcon />
 						</div>
 						<div className='flex py-2 px-1 justify-center gap-4'>
-							<h1>Already have an account?</h1>
+							<h1>Đã có tài khoản?</h1>
 							<Link className='cursor-pointer' onClick={toggleSignInModal}>
-								Sign in
+								Đăng nhập
 							</Link>
 						</div>
 					</ModalBody>
 					<ModalFooter>
-						<Button color='danger' variant='flat' onClick={onClose}>
-							Close
-						</Button>
 					</ModalFooter>
 				</ModalContent>
 			</Modal>

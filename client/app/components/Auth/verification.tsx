@@ -51,7 +51,7 @@ const VerificationModal: React.FC<Props> = ({
 			setTimeout(() => {
 				setSnackbarOpen(false);
 				toggleSignInModal();
-			}, 8000);
+			}, 1500);
 		} else if (error) {
 			if ("data" in error) {
 				const errorData = error as any;
@@ -107,7 +107,7 @@ const VerificationModal: React.FC<Props> = ({
 			<Modal isOpen={true} onClose={onClose} placement='top-center'>
 				<ModalContent>
 					<ModalHeader className='flex justify-center'>
-						Verify your account
+						Xác thực email của bạn
 					</ModalHeader>
 					<ModalBody>
 						<div className='flex justify-center '>
@@ -164,17 +164,17 @@ const VerificationModal: React.FC<Props> = ({
 											type='submit'
 											disabled={isSubmitting}
 										>
-											Verify
+											Xác nhận
 										</Button>
 									</div>
 									<ModalFooter />
 									<div className='flex justify-center gap-4 my-5'>
-										<h1>Go back to Sign-in ? </h1>
+										<h1>Quay lại đăng nhập ? </h1>
 										<Link
 											className='cursor-pointer'
 											onClick={toggleSignInModal}
 										>
-											Sign-in
+											Đăng nhập
 										</Link>{" "}
 									</div>
 								</Form>
