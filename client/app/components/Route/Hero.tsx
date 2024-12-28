@@ -45,10 +45,9 @@ const Hero = ({}: HeroProps) => {
 				>
 					<section className='flex flex-col items-center justify-center gap-4 py-8 md:py-10 '>
 						<Image
-							isZoomed
 							width={600}
 							height={600}
-							alt='NextUI Fruit Image with Zoom'
+							alt='Learning Corner banner image'
 							src={data?.layout?.banner?.image?.url}
 						/>
 					</section>

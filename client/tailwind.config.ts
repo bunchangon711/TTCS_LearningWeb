@@ -18,7 +18,17 @@ const tailwindConfig: Config = {
 		"./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
-		extend: {},
+		extend: {
+			keyframes: {
+			  scroll: {
+				'0%': { transform: 'translateX(0)' },
+				'100%': { transform: 'translateX(-50%)' },
+			  }
+			},
+			animation: {
+			  'scroll': 'scroll 40s linear infinite'
+			}
+		  },
 		screens: {
 			sm: "640px",
 			md: "768px",

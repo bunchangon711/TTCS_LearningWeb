@@ -7,7 +7,6 @@ type CoursesProps = {};
 
 const Courses = ({}: CoursesProps) => {
 	const { data, isLoading } = useGetUsersAllCoursesQuery({});
-
 	const [courses, setCourses] = useState<any[]>([]);
 
 	useEffect(() => {
@@ -16,22 +15,23 @@ const Courses = ({}: CoursesProps) => {
 
 	return (
 		<div>
-			<div
-				className={`w-[90%] 800px:w-[80%] m-auto  mt-44 flex justify-center flex-col`}
-			>
-				<h1 className={title({ class: "text-center " })}>
-					{" "}
-					<span className={title({ color: "violet" })}>Các khóa học </span>
-					đang mở bán
-				</h1>
-				<div className='grid grid-cols-1 gap-[20px] md:grid-cols-1 md:gap-[25px] lg:grid-cols-2 lg:gap-[25px] 1500px:grid-cols-4 1500px:gap-[35px] mb-12 border-0'>
-					{courses?.map((item: any, index: number) => (
-						<CourseCard item={item} key={index} />
-					))}
-				</div>
+		  <div className="mt-44 flex justify-center flex-col">
+			<h1 className={title({ class: "text-center mb-16" })}>
+			  <span className={title({ color: "violet" })}>Các khóa học tiêu biểu</span>
+			</h1>
+	
+			<div className="relative w-screen -left-[50vw] right-[50vw] ml-[50%] mr-[50%] overflow-hidden">
+			  <div className="flex animate-scroll gap-[35px] py-4">
+				{courses?.concat(courses)?.map((item: any, index: number) => (
+				  <div key={index} className="flex-none w-[calc(25%-26px)] min-w-[500px]">
+					<CourseCard item={item} />
+				  </div>
+				))}
+			  </div>
 			</div>
+		  </div>
 		</div>
-	);
+	  );
 };
 
 export default Courses;
