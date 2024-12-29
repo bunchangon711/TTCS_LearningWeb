@@ -24,10 +24,10 @@ const CourseOptions: FC<Props> = ({
 	handleReset,
 }) => {
 	const options = [
-		"Course Information",
-		"Course Options",
-		"Course Content",
-		"Course Preview",
+		"Thông tin cơ bản",
+		"Giới thiệu khóa học",
+		"Nội dung khóa học",
+		"Xem trước",
 	];
 
 	return (
@@ -54,14 +54,14 @@ const CourseOptions: FC<Props> = ({
 										onClick={handleNext}
 										className='mt-1 mr-1'
 									>
-										{index === options.length - 1 ? "Finish" : "Continue"}
+										{index === options.length - 1 ? "Tạo" : "Tiếp tục"}
 									</Button>
 									<Button
 										isDisabled={index === 0}
 										onClick={handleBack}
 										className='mt-1 mr-1'
 									>
-										Back
+										Quay lại
 									</Button>
 								</div>
 							</Box>

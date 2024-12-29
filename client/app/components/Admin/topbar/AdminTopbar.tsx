@@ -40,7 +40,7 @@ const TopBarAdmin: FC<Props> = () => {
 
 	return (
 		<>
-			<div className='flex w-full  flex-col '>
+			{/* <div className='flex w-full  flex-col '>
 				<Tabs
 					aria-label='Options'
 					color='primary'
@@ -120,12 +120,12 @@ const TopBarAdmin: FC<Props> = () => {
 						title={
 							<div className='flex items-center space-x-2'>
 								<AnalyticsRoundedIcon />
-								<span>Analytics </span>
+								<span>Thống kê </span>
 							</div>
 						}
 					></Tab>
 				</Tabs>
-			</div>
+			</div> */}
 		</>
 	);
 };

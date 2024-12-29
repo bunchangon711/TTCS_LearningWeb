@@ -38,19 +38,6 @@ const EditCourse: FC<Props> = ({ id }) => {
 		}
 	}, [isSuccess, error]);
 
-	// useEffect(() => {
-	// 	if (isSuccess) {
-	// 		console.log("course created successfully");
-	// 		redirect("/admin/all-courses");
-	// 	}
-	// 	if (error) {
-	// 		if ("data" in error) {
-	// 			const errorMessage = error as any;
-	// 			console.log(errorMessage.data.message);
-	// 		}
-	// 	}
-	// }, [isLoading, isSuccess, error]);
-
 	const [activeStep, setActiveStep] = useState(0);
 	const handleNext = () => {
 		setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -100,7 +87,7 @@ const EditCourse: FC<Props> = ({ id }) => {
 			videoUrl: "",
 			title: "",
 			description: "",
-			videoSection: "Untitled Section",
+			videoSection: "Chương bài giảng 1",
 			links: [
 				{
 					title: "",

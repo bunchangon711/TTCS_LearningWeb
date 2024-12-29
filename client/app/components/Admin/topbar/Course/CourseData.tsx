@@ -92,7 +92,7 @@ const CourseData: FC<Props> = ({
 			<Card className='md:min-w-[750px]'>
 				<CardHeader className='flex gap-3'>
 					<label className='my-4'>
-						What are benefits for students in this course?
+						Học viên sẽ thu được gì từ khóa học này?
 					</label>
 				</CardHeader>
 				<CardBody className='gap-3'>
@@ -103,7 +103,7 @@ const CourseData: FC<Props> = ({
 							variant='bordered'
 							required
 							value={benefits.title}
-							placeholder='You will lbe able to learn  FUll stack Lms Platform'
+							placeholder='Thành thạo kĩ năng ... '
 							onChange={(e: any) => handleBenefitChanges(index, e.target.value)}
 						/>
 					))}
@@ -115,7 +115,7 @@ const CourseData: FC<Props> = ({
 
 				<CardHeader className='flex gap-3'>
 					<label className='my-4'>
-						What are prerequisites for starting this course?
+						Yêu cầu cần có để tham gia khóa học này?
 					</label>
 				</CardHeader>
 				<CardBody className='gap-3'>
@@ -126,7 +126,7 @@ const CourseData: FC<Props> = ({
 							variant='bordered'
 							required
 							value={prerequisites.title}
-							placeholder='You will lbe able to learn  FUll stack Lms Platform'
+							placeholder='Cần biết về ...'
 							onChange={(e: any) =>
 								handlePrerequisitesChanges(index, e.target.value)
 							}

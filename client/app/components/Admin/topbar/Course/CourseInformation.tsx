@@ -129,8 +129,8 @@ const CourseInformation: FC<Props> = ({
 							type='text'
 							variant='bordered'
 							required
-							label='Course Name'
-							placeholder='Mern Stack LMS with Nextjs'
+							label='Tên khóa học'
+							placeholder='Tên khóa học'
 							value={courseInfo.name}
 							onChange={(e: any) =>
 								setCourseInfo({ ...courseInfo, name: e.target.value })
@@ -140,10 +140,10 @@ const CourseInformation: FC<Props> = ({
 					<CardBody className='gap-3'>
 						<Textarea
 							variant='bordered'
-							label='Course Description'
+							label='Giới thiệu khóa học'
 							labelPlacement='outside'
 							required
-							placeholder='Write something amazing...'
+							placeholder='Mô tả khóa học'
 							className='col-span-12 md:col-span-6 mb-6 md:mb-0'
 							value={courseInfo.description}
 							onChange={(e: any) =>
@@ -158,7 +158,7 @@ const CourseInformation: FC<Props> = ({
 								labelPlacement='outside'
 								type='number'
 								variant='bordered'
-								label='Course Sale Price'
+								label='Giá bán'
 								placeholder='150000'
 								value={courseInfo.price}
 								onChange={(e: any) =>
@@ -174,7 +174,7 @@ const CourseInformation: FC<Props> = ({
 								labelPlacement='outside'
 								type='number'
 								variant='bordered'
-								label='Course original price'
+								label='Giá gốc'
 								placeholder='200000'
 								value={courseInfo.estimatedPrice}
 								onChange={(e: any) =>
@@ -197,7 +197,7 @@ const CourseInformation: FC<Props> = ({
 								type='text'
 								required
 								variant='bordered'
-								label='Course Tags'
+								label='Từ khóa'
 								value={courseInfo.tags}
 								onChange={(e: any) =>
 									setCourseInfo({ ...courseInfo, tags: e.target.value })
@@ -231,7 +231,7 @@ const CourseInformation: FC<Props> = ({
 									setCourseInfo({ ...courseInfo, categories: e.target.value })
 								}
 							>
-								<option value=''>Select Category</option>
+								<option value=''>Chọn danh mục</option>
 								{categories?.map((item: any) => (
 									<option value={item.title} key={item._id}>
 										{item.title}
@@ -244,20 +244,20 @@ const CourseInformation: FC<Props> = ({
 								labelPlacement='outside'
 								type='text'
 								variant='bordered'
-								label='Course Level'
+								label='Trình độ khóa học'
 								required
 								value={courseInfo.level}
 								onChange={(e: any) =>
 									setCourseInfo({ ...courseInfo, level: e.target.value })
 								}
-								placeholder='Beginner/Intermediate/Expert'
+								placeholder='Dễ/Trung bình/Khó'
 							/>
 							<Input
 								labelPlacement='outside'
 								type='text'
 								variant='bordered'
-								label='Demo url'
-								placeholder='ud8ce7c'
+								label='Link video demo'
+								placeholder='https://youtu.be/abc'
 								required
 								value={courseInfo.demoUrl}
 								onChange={(e: any) =>
@@ -314,8 +314,8 @@ const CourseInformation: FC<Props> = ({
 								)}
 								<span className='text-sm text-gray-600'>
 									{courseInfo.thumbnail
-										? "Change thumbnail"
-										: "Drag and drop your thumbnail here or click to browse"}
+										? "Thay đổi ảnh bìa"
+										: "Kéo thả ảnh bìa vào đây hoặc chọn từ máy tính"}
 								</span>
 								{selectedFileName && (
 									<span className='text-gray-600'>{selectedFileName}</span>

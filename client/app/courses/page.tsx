@@ -79,7 +79,7 @@ const CoursesContent = () => {
 								}  cursor-pointer`}
 								onClick={() => setCategory("All")}
 							>
-								All
+								Tất cả
 							</Chip>
 
 							{categories?.map((item: any, index: number) => (
@@ -104,8 +104,8 @@ const CoursesContent = () => {
 						{courses && courses.length === 0 && (
 							<p className={` justify-center  flex items-center mt-20  `}>
 								{search
-									? "No courses found!"
-									: "No courses found in this category. Please try another one!"}
+									? "Không tìm thấy kết quả nào phù hợp với từ khóa của bạn!"
+									: "Không có khóa học nào trong danh mục này! Vui lòng chọn một danh mục khác."}
 							</p>
 						)}
 						<br />

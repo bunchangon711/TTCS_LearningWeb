@@ -42,7 +42,7 @@ const CourseContent: FC<Props> = ({
 		Array(courseContentData.length).fill(false)
 	);
 
-	const [activeSection, setActiveSection] = useState(1);
+	const [activeSection, setActiveSection] = useState(2);
 
 	const handleBackClick = () => {
 		setActiveStep(activeStep - 1);
@@ -143,7 +143,7 @@ const CourseContent: FC<Props> = ({
 			title: "",
 			description: "",
 			videoLength: "",
-			videoSection: `Untitled Section ${activeSection}`,
+			videoSection: `Chương bài giảng ${activeSection}`,
 			links: [{ title: "", url: "" }],
 		};
 
@@ -194,7 +194,7 @@ const CourseContent: FC<Props> = ({
 													<Input
 														labelPlacement='outside'
 														className={` ${
-															item.videoSection === "Untitled Section"
+															item.videoSection === "Chương bài giảng"
 														} border-none `}
 														type='text'
 														variant='underlined'
@@ -257,10 +257,10 @@ const CourseContent: FC<Props> = ({
 												<div className='flex flex-col gap-4'>
 													<Input
 														labelPlacement='outside'
-														label='Title'
+														label='Tiêu đề bài giảng'
 														type='text'
 														variant='bordered'
-														placeholder='Project Plan...'
+														placeholder='Tiêu đề'
 														required
 														value={item.title}
 														onChange={(e: any) => {
@@ -273,9 +273,9 @@ const CourseContent: FC<Props> = ({
 													<Input
 														labelPlacement='outside'
 														type='text'
-														label='Video Url'
+														label='Link video bài giảng'
 														variant='bordered'
-														placeholder='kldjl'
+														placeholder='https://youtu.be/abc'
 														required
 														value={item.videoUrl}
 														onChange={(e: any) => {
@@ -283,25 +283,10 @@ const CourseContent: FC<Props> = ({
 															updatedData[index].videoUrl = e.target.value;
 															setCourseContentData(updatedData);
 														}}
-													/>
-													{/* <Input
-														labelPlacement='outside'
-														type='number'
-														label='Video Length  (in minutes)'
-														variant='bordered'
-														placeholder='20'
-														required
-														value={item.videoLength}
-														onChange={(e) => {
-															const updatedData = [...courseContentData];
-															updatedData[index].videoLength = e.target.value;
-															setCourseContentData(updatedData);
-														}}
-													/> */}
-													<label
-													// className={styles.label}
+													/>													
+													<label													
 													>
-														Video Length (in minutes)
+														Độ dài video (phút)
 													</label>
 													<input
 														type='number'
@@ -318,10 +303,10 @@ const CourseContent: FC<Props> = ({
 
 													<Textarea
 														variant='bordered'
-														label='Course Description'
+														label='Nội dung bài giảng'
 														labelPlacement='outside'
 														required
-														placeholder='Write something amazing...'
+														placeholder='...'
 														className='col-span-12 md:col-span-6 mb-6 md:mb-0'
 														value={item.description}
 														onChange={(e: any) => {
@@ -335,7 +320,7 @@ const CourseContent: FC<Props> = ({
 												{item?.links.map((link: any, linkIndex: number) => (
 													<>
 														<div className='flex justify-between my-10'>
-															<label>Link {linkIndex + 1}</label>
+															<label>Tài liệu {linkIndex + 1}</label>
 															<DeleteRoundedIcon
 																className={`${
 																	linkIndex === 0
@@ -354,9 +339,9 @@ const CourseContent: FC<Props> = ({
 															<Input
 																labelPlacement='outside'
 																type='text'
-																label='Document title'
+																label='Tên tài liệu'
 																variant='bordered'
-																placeholder='Project Plan...'
+																placeholder='Bài tập'
 																required
 																className='cursor-no-drop my-10 '
 																value={link.title}
@@ -370,7 +355,7 @@ const CourseContent: FC<Props> = ({
 															<Input
 																labelPlacement='outside'
 																type='text'
-																label='Document  URL '
+																label='Link tài liệu'
 																variant='bordered'
 																placeholder='drive.google.com/...'
 																required
@@ -394,7 +379,7 @@ const CourseContent: FC<Props> = ({
 														variant='faded'
 														color='primary'
 													>
-														Add link
+														Thêm tài liệu
 													</Chip>
 												</div>
 											</>
@@ -413,7 +398,7 @@ const CourseContent: FC<Props> = ({
 													variant='shadow'
 													color='primary'
 												>
-													Add New Content
+													Thêm bài giảng
 												</Chip>
 											</div>
 										)}
@@ -437,7 +422,7 @@ const CourseContent: FC<Props> = ({
 						variant='shadow'
 						color='primary'
 					>
-						Add New Section
+						Thêm mục mới
 					</Chip>
 				</div>
 			</form>
@@ -452,7 +437,7 @@ const CourseContent: FC<Props> = ({
 					className='px-8'
 					onClick={handleBackClick}
 				>
-					Back
+					Quay lại
 				</Button>
 				<Button
 					color='danger'
@@ -460,7 +445,7 @@ const CourseContent: FC<Props> = ({
 					className='px-8'
 					onClick={handleNextClick}
 				>
-					Next
+					Tiếp tục
 				</Button>
 			</div>
 
