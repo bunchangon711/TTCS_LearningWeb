@@ -293,7 +293,7 @@ const CourseContentMedia = ({
 							id=''
 							cols={40}
 							rows={5}
-							placeholder='Write your question...'
+							placeholder='Viết câu hỏi của bạn về bài giảng này...'
 							className=' p-2  mx-4'
 						/>
 					</div>
@@ -306,7 +306,7 @@ const CourseContentMedia = ({
 							}`}
 							onClick={questionCreationLoading ? () => {} : handleQuestion}
 						>
-							Submit
+							Gửi
 						</Button>
 					</div>
 					<br />
@@ -377,7 +377,7 @@ const CourseContentMedia = ({
 											id=''
 											cols={40}
 											rows={5}
-											placeholder='Write your comment...'
+											placeholder='Viết đánh giá của bạn về khóa học này...'
 											className='   mr-6'
 										/>
 									</div>
@@ -393,7 +393,7 @@ const CourseContentMedia = ({
 											reviewCreationLoading ? () => {} : handleReviewSubmit
 										}
 									>
-										Submit
+										Gửi
 									</Button>
 								</div>
 							</>
@@ -437,7 +437,7 @@ const CourseContentMedia = ({
 															setReviewId(item._id);
 														}}
 													>
-														Add Reply
+														Thêm câu trả lời
 													</span>
 												)}
 
@@ -446,10 +446,10 @@ const CourseContentMedia = ({
 													<Input
 														variant='flat'
 														type='text'
-														placeholder='Enter your reply...'
+														placeholder='Trả lời đánh giá học viên...'
 														value={reply}
 														onChange={(e: any) => setReply(e.target.value)}
-														className='mr-24 ml-8 mt-4'
+														className='mr-24 ml-14 mt-4'
 													/>
 													<Button
 														variant='flat'
@@ -458,14 +458,14 @@ const CourseContentMedia = ({
 														className='absolute right-0 bottom-1'
 														onClick={handleReviewReplySubmit}
 													>
-														Submit
+														Gửi
 													</Button>
 												</div>
 											)}
 
 											{item.commentReplies.map((i: any, index: number) => (
 												<div
-													className='w-full flex 800px:ml-16 my-5'
+													className='w-[85%] flex ml-14 my-5'
 													key={index}
 												>
 													<div className='w-[50px] h-[50px]'>
@@ -648,7 +648,7 @@ const CommentItem = ({
 				<>
 					{item.questionReplies.map((item: any) => (
 						<div
-							className='w-full flex 800px:ml-16 my-5 text-black dark:text-white'
+							className='w-[85%] flex ml-14 my-5 text-black dark:text-white'
 							key={item._id}
 						>
 							<div>
@@ -680,11 +680,10 @@ const CommentItem = ({
 							<Input
 								variant='flat'
 								type='text'
-								placeholder='Enter your answer...'
+								placeholder='Viết câu trả lời của bạn...'
 								value={answer}
 								onChange={(e: any) => setAnswer(e.target.value)}
-								className={`														mr-24 ml-8 mt-4
- ${answer === "" || (answerCreationLoading && "cursor-not-allowed")}`}
+								className={`mr-24 ml-16 mt-4 ${answer === "" || (answerCreationLoading && "cursor-not-allowed")}`}
 							/>
 							<Button
 								variant='flat'
@@ -694,7 +693,7 @@ const CommentItem = ({
 								onClick={handleAnswerSubmit}
 								disabled={answer === "" || answerCreationLoading}
 							>
-								Submit
+								Gửi
 							</Button>
 						</div>
 						<br />

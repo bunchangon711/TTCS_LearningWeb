@@ -199,7 +199,7 @@ const EditFaq = (props: Props) => {
 									: handleEdit
 							}
 						>
-							Save
+							Lưu
 						</Button>
 					</div>
 				</Card>

@@ -132,7 +132,7 @@ const EditCategories = ({}: EditCategoriesProps) => {
 										: editCategoriesHandler
 								}
 							>
-								Save
+								Lưu
 							</Button>
 						</div>
 					</div>

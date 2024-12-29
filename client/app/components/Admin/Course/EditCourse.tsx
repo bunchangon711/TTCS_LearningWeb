@@ -190,7 +190,7 @@ const EditCourse: FC<Props> = ({ id }) => {
 					isEdit={true}
 				/>
 			)}
-			<div className='md:fixed md:absolute md:top-0 md:right-0 md:static w-full md:w-auto'>
+			<div className='md:absolute md:top-0 md:right-0 w-full md:w-auto'>
 				<CourseOptions
 					activeStep={activeStep}
 					handleNext={handleNext}

@@ -202,7 +202,7 @@ const CourseInformation: FC<Props> = ({
 								onChange={(e: any) =>
 									setCourseInfo({ ...courseInfo, tags: e.target.value })
 								}
-								placeholder='MERN, NEXT 13, Socket io, tailwind css'
+								placeholder='MERN, NEXT 13, Socket.io, tailwindcss, ...'
 							/>
 
 							{/* <Select
