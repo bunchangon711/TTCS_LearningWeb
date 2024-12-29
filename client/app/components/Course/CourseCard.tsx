@@ -31,7 +31,7 @@ const CourseCard = ({ item, isProfile }: CourseCardProps) => {
 					<div className='flex justify-between items-center mt-4'>
 						<Ratings rating={item.ratings} />
 						<h5 className={`text-black dark:text-[#fff] ${isProfile && "hidden 800px:inline"}`}>
-							{item.purchased} Students
+							{item.purchased} Học viên
 						</h5>
 					</div>
 					
@@ -47,7 +47,7 @@ const CourseCard = ({ item, isProfile }: CourseCardProps) => {
 						<div className='flex items-center pb-3 pl-3'>
 							{/* <AiOutlineUnorderedList size={20} fill='#fff' /> */}
 							<h5 className='pl-2 text-black dark:text-[#fff]'>
-								{item.courseData?.length} Lectures
+								{item.courseData?.length} Bài giảng
 							</h5>
 						</div>
 					</div>

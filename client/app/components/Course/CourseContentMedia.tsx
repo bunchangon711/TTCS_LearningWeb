@@ -239,7 +239,7 @@ const CourseContentMedia = ({
 	const tabs: TabData[] = [
 		{
 			id: 0,
-			label: "Overview",
+			label: "Nội dung",
 			content: (
 				<p
 					className='lg:text-xl text-base  font-medium
@@ -251,7 +251,7 @@ const CourseContentMedia = ({
 		},
 		{
 			id: 1,
-			label: "Resources",
+			label: "Tài liệu",
 			content: (
 				<div>
 					{data[activeVideo]?.links.map((item: any, index: number) => (
@@ -272,7 +272,7 @@ const CourseContentMedia = ({
 		},
 		{
 			id: 2,
-			label: "Q&A",
+			label: "Câu hỏi",
 			content: (
 				<>
 					<div className='flex w-full'>
@@ -330,7 +330,7 @@ const CourseContentMedia = ({
 		},
 		{
 			id: 3,
-			label: "Reviews",
+			label: "Đánh giá khóa học",
 			content: (
 				<div className='w-full'>
 					<>
@@ -521,7 +521,7 @@ const CourseContentMedia = ({
 					}
 				>
 					<ChevronLeftRoundedIcon className='' />
-					Prev Lesson
+					Bài giảng trước
 				</Button>
 
 				<Button
@@ -536,7 +536,7 @@ const CourseContentMedia = ({
 						)
 					}
 				>
-					Next Lesson
+					Bài giảng sau
 					<ChevronRightRoundedIcon />
 				</Button>
 			</div>

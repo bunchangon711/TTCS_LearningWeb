@@ -82,11 +82,11 @@ const CourseContentList = ({
 							</div>
 						</div>
 						<h5 className=''>
-							{sectionVideoCount} Lessons ·{" "}
+							{sectionVideoCount} Bài giảng ·{" "}
 							{sectionVideoLength < 60
 								? sectionVideoLength
 								: sectionContentHours.toFixed(2)}{" "}
-							{sectionVideoLength > 60 ? "hours" : "minutes"}
+							{sectionVideoLength > 60 ? "giờ" : "phút"}
 						</h5>
 						<br />
 						{isSectionVisible && (
@@ -120,7 +120,7 @@ const CourseContentList = ({
 												{item.videoLength > 60
 													? contentLength.toFixed(2)
 													: item.videoLength}{" "}
-												{item.videoLength > 60 ? "hours" : "minutes"}
+												{item.videoLength > 60 ? "giờ" : "phút"}
 											</h5>
 										</div>
 									);

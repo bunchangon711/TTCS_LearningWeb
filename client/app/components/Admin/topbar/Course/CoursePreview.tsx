@@ -106,12 +106,12 @@ const CoursePreview: FC<Props> = ({
 				<div className='flex  justify-between me-2 '>
 					<div className='flex gap-3 align-middle '>
 						<Ratings rating={0} />
-						<h5>{"  "} 0 Reviews</h5>
+						<h5>{"  "} 0 Đánh giá</h5>
 					</div>
-					<h5>0 Students</h5>
+					<h5>0 Học viên</h5>
 				</div>
 				<h1 className='font-[600] text-[25px]'>
-					What you will learn from this course?
+					Bạn sẽ học được gì từ khóa học này?
 				</h1>
 				{courseData?.benefits?.map((item: any, index: number) => (
 					<div key={index} className='flex align-middle '>
@@ -122,7 +122,7 @@ const CoursePreview: FC<Props> = ({
 					</div>
 				))}
 				<h1 className='font-[600] text-[25px]'>
-					What are the prerequisites for starting this course?
+					Những điều cần chuẩn bị trước khi tham gia khóa học?
 				</h1>
 				{courseData?.prerequisites?.map((item: any, index: number) => (
 					<div key={index} className='flex align-middle '>
@@ -134,7 +134,7 @@ const CoursePreview: FC<Props> = ({
 				))}
 				{/* course Description */}
 				<div>
-					<h1 className='font-[600] text-[25px]'>Course Details</h1>
+					<h1 className='font-[600] text-[25px]'>Chi tiết khóa học</h1>
 					{courseData?.description}
 				</div>
 			</CardBody>

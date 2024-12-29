@@ -67,10 +67,10 @@ const CourseDetails = ({
 						<div className='flex items-center justify-between pt-3 pr-6'>
 							<div className='flex items-center'>
 								<Ratings rating={data.ratings} />
-								<h5 className={subtitle()}> {data.reviews?.length} Reviews</h5>
+								<h5 className={subtitle()}> {data.reviews?.length} Đánh giá</h5>
 							</div>
 							<div className='flex items-center'>
-								<h5 className={subtitle()}>{data.purchased} Students</h5>
+								<h5 className={subtitle()}>{data.purchased} Học viên</h5>
 							</div>
 						</div>
 
