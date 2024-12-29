@@ -48,14 +48,14 @@ const CourseOptions: FC<Props> = ({
 							{/* <Typography>{step}</Typography> */}
 							<Box sx={{ mb: 2 }}>
 								<div>
-									<Button
+									{/* <Button
 										variant='flat'
 										color='primary'
 										onClick={handleNext}
 										className='mt-1 mr-1'
 									>
 										{index === options.length - 1 ? "Tạo" : "Tiếp tục"}
-									</Button>
+									</Button> */}
 									<Button
 										isDisabled={index === 0}
 										onClick={handleBack}

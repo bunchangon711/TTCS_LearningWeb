@@ -333,7 +333,7 @@ const CourseInformation: FC<Props> = ({
 							className='px-8'
 							type='submit'
 						>
-							Next
+							Tiếp tục
 						</Button>
 					</div>
 				</Card>

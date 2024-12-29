@@ -71,7 +71,7 @@ const CoursePreview: FC<Props> = ({
 
 			<CardBody className='flex gap-3'>
 				<Button color='primary' variant='flat' className='px-8' type='submit'>
-					Buy Now {courseData?.price} VND
+					Mua ngay với giá {courseData?.price} VND
 				</Button>{" "}
 				<div className='flex gap-3'>
 					<Input
@@ -79,10 +79,10 @@ const CoursePreview: FC<Props> = ({
 						type='text'
 						variant='bordered'
 						label=''
-						placeholder='Discount code ...'
+						placeholder='Mã giảm giá ...'
 					/>
 					<Button color='primary' variant='flat' className='px-8' type='submit'>
-						Apply{" "}
+						Sử dụng{" "}
 					</Button>{" "}
 				</div>
 				<p>
@@ -149,7 +149,7 @@ const CoursePreview: FC<Props> = ({
 					className='px-8'
 					onClick={handleBackClick}
 				>
-					Back
+					Quay lại
 				</Button>
 				<Button
 					color='danger'
@@ -157,7 +157,7 @@ const CoursePreview: FC<Props> = ({
 					className='px-8'
 					onClick={() => createCourse()}
 				>
-					{isEdit ? "Update" : "Create"}
+					{isEdit ? "Cập nhật" : "Tạo khóa học"}
 				</Button>
 			</CardFooter>
 		</Card>

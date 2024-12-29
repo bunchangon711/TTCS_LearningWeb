@@ -147,7 +147,7 @@ const CourseData: FC<Props> = ({
 						className='px-8'
 						onClick={handleBackClick}
 					>
-						Back
+						Quay lại
 					</Button>
 					<Button
 						color='danger'
@@ -155,7 +155,7 @@ const CourseData: FC<Props> = ({
 						className='px-8'
 						onClick={handleNextClick}
 					>
-						Next
+						Tiếp tục
 					</Button>
 				</div>
 			</Card>

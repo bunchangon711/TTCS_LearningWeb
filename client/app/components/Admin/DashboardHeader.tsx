@@ -80,9 +80,9 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
 			<Dropdown placement='bottom-end'>
 				<DropdownTrigger>
 					<Button
-					radius='full'
-					variant='light'
-					className="flex items-center gap-2"
+						radius='full'
+						variant='light'
+						className="flex items-center gap-2 h-10" // Added h-10 for reduced height
 					>
 					<span>Thông báo</span>
 					<div className="relative">
@@ -102,7 +102,7 @@ const DashboardHeader: FC<Props> = ({ open, setOpen }) => {
 					variant='flat'
 					className='md:w-80 h-96 overflow-y-auto w-48' // Set a fixed height with overflow-y auto
 				>
-					<DropdownItem className='h-14 gap-2' isReadOnly>
+					<DropdownItem className='h-10 gap-2' isReadOnly>
 						<p className='font-semibold p-3 flex justify-center'>
 							Danh sách thông báo
 						</p>

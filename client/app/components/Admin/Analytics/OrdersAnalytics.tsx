@@ -31,7 +31,7 @@ export default function OrdersAnalytics({ isDashboard }: OrdersAnalyticsProps) {
 				<Loader />
 			) : (
 				<Card className='mt-6 '>
-					<div className={isDashboard ? "h-[30vh]" : "h-screen"}>
+					<div className={isDashboard ? "h-[45vh]" : "h-screen"}>
 						<div
 							className={isDashboard ? "mt-[0px] pl-[40px] mb-2" : "mt-[50px]"}
 						>
@@ -40,11 +40,11 @@ export default function OrdersAnalytics({ isDashboard }: OrdersAnalyticsProps) {
 									isDashboard && "!text-[20px]"
 								} px-5 sm:text-3xl text-lg`}
 							>
-								Orders Analytics
+								Thống kê đơn hàng
 							</h1>
 							{!isDashboard && (
 								<p className={`px-5 sm:text-2xl text-base`}>
-									Last 12 months analytics data{" "}
+									Số liệu trong 12 tháng vừa qua{" "}
 								</p>
 							)}
 						</div>
@@ -55,7 +55,7 @@ export default function OrdersAnalytics({ isDashboard }: OrdersAnalyticsProps) {
 						>
 							<ResponsiveContainer
 								width={isDashboard ? "100%" : "90%"}
-								height={isDashboard ? "100%" : "50%"}
+								height={isDashboard ? "85%" : "50%"}
 							>
 								<LineChart
 									width={500}

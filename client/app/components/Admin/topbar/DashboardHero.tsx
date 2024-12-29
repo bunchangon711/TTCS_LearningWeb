@@ -28,11 +28,12 @@ const DashboardHero: FC<Props> = ({ isDashboard }: Props) => {
 	const [open, setOpen] = useState(false);
 	return (
 		<>
+		  <div className="h-12">
 			<DashboardHeader open={open} setOpen={setOpen} />
-
-			{isDashboard && <DashboardWidgets open={open} />}
+		  </div>
+		  {isDashboard && <DashboardWidgets open={open} />}
 		</>
-	);
+	  );
 };
 
 export default DashboardHero;

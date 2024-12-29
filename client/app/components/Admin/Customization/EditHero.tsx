@@ -93,7 +93,7 @@ const EditHero: FC<Props> = (props: Props) => {
 								isZoomed
 								width={240}
 								height={240}
-								alt='NextUI Fruit Image with Zoom'
+								alt='Banner trang chủ'
 								src={image}
 							/>
 							<input
@@ -115,7 +115,7 @@ const EditHero: FC<Props> = (props: Props) => {
 					<div className='inline-block max-w-lg text-center justify-center flex-col'>
 						<textarea
 							className={`${title()} outline-none resize-none h-36 md:h-60 bg-transparent   px-2 block text-center`}
-							placeholder='Improve Your Online Learning Experience Better Instantly'
+							placeholder='Tiêu đề trang chủ'
 							value={heading}
 							onChange={(e) => setHeading(e.target.value)}
 							rows={4}
@@ -124,39 +124,9 @@ const EditHero: FC<Props> = (props: Props) => {
 						<textarea
 							value={subHeading}
 							onChange={(e) => setSubHeading(e.target.value)}
-							placeholder='We have 40k+ Online courses & 500K+ Online registered student. Find your desired Courses from them.'
+							placeholder='Giúp bạn tự tin chinh phục mọi lĩnh vực và phát triển trong thế giới tri thức đa dạng.'
 							className={`${subtitle()} outline-none resize-none  bg-transparent   px-2 block text-center`}
 						/>
-					</div>
-
-					<div className='flex gap-3'>
-						<Link
-							isExternal
-							href={siteConfig.links.docs}
-							className={buttonStyles({
-								color: "primary",
-								radius: "full",
-								variant: "shadow",
-							})}
-						>
-							Documentation
-						</Link>
-						<Link
-							isExternal
-							className={buttonStyles({ variant: "bordered", radius: "full" })}
-							href={siteConfig.links.github}
-						>
-							<GithubIcon size={20} />
-							GitHub
-						</Link>
-					</div>
-
-					<div className='mt-8'>
-						<Snippet hideSymbol hideCopyButton variant='flat'>
-							<span>
-								Get started by editing <Code color='primary'>app/page.tsx</Code>
-							</span>
-						</Snippet>
 					</div>
 				</section>
 			</div>
@@ -183,7 +153,7 @@ const EditHero: FC<Props> = (props: Props) => {
 							: () => null
 					}
 				>
-					Save
+					Lưu
 				</Button>
 			</div>
 		</>

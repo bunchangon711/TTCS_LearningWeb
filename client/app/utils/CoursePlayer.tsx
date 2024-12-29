@@ -5,7 +5,7 @@ type Props = {
   title: string;
 };
 
-const CoursePlayer: FC<Props> = ({ videoUrl, title }) => {
+const CoursePlayer: FC<Props> = ({ videoUrl = '', title }) => {
   const getYoutubeVideoId = (url: string) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
     const match = url.match(regExp);

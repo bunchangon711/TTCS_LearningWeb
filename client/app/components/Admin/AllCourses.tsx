@@ -3,7 +3,6 @@ import { DataGrid } from "@mui/x-data-grid";
 import { Box } from "@mui/material";
 import DeleteRounded from "@mui/icons-material/DeleteRounded";
 import { Button } from "@nextui-org/button";
-import { ThemeSwitch, ThemeSwitchProps } from "@/components/theme-switch";
 import { useTheme } from "next-themes";
 import {
 	useDeleteCourseMutation,
@@ -51,8 +50,6 @@ const AllCourses = () => {
 								<EditRoundedIcon />
 							</Button>
 						</div>
-
-						{/* <EditRoundedIcon className='dark:text-white text-black' /> */}
 					</Link>
 				);
 			},
@@ -82,12 +79,6 @@ const AllCourses = () => {
 			},
 		},
 	];
-	//   const {isOpen, onOpen, onOpenChange} = useDisclosure();
-
-	const toggleTheme = () => {
-		// Toggle between light and dark themes
-		setTheme(theme === "light" ? "dark" : "light");
-	};
 
 	const [courseId, setCourseId] = useState("");
 
@@ -133,7 +124,6 @@ const AllCourses = () => {
 				<Loader />
 			) : (
 				<Box m='20px'>
-					<ThemeSwitch toggleTheme={toggleTheme} />{" "}
 					<Box
 						m='40px 0 0 0'
 						height='80vh'
@@ -194,17 +184,17 @@ const AllCourses = () => {
 					<Modal isOpen={isOpen} onClose={onOpenChange}>
 						<ModalContent>
 							<ModalHeader className='flex flex-col gap-1'>
-								Delete Course
+								Xóa khóa học
 							</ModalHeader>
 							<ModalBody>
-								<p>Are you sure you want to delete this course?</p>
+								<p>Bạn có chắc muốn xóa khóa học này không?</p>
 							</ModalBody>
 							<ModalFooter>
 								<Button color='primary' variant='flat' onClick={onOpenChange}>
-									Cancel
+									Hủy
 								</Button>
 								<Button color='primary' onClick={handleDelete}>
-									Delete
+									Xóa
 								</Button>
 							</ModalFooter>
 						</ModalContent>

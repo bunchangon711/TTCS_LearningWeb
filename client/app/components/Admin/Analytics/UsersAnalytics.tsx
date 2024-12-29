@@ -28,25 +28,19 @@ const UserAnalytics = ({ isDashboard }: UserAnalyticsProps) => {
 			{isLoading ? (
 				<Loader />
 			) : (
-				<Card className='mt-6 '>
-					<div
-						className={`${
-							isDashboard
-								? "mt-[50px] dark:bg-[#111C43] shadow-sm pb-5 rounded-sm"
-								: "mt-[50px]"
-						}`}
-					>
+				<Card className='mt-0'>
+					<div className={`${isDashboard ? "mt-[20px] dark:bg-[#111C43] shadow-sm pb-5 rounded-sm" : "mt-[50px]"}`}>
 						<div className={`${isDashboard ? "!ml-8 mb-5" : ""}`}>
 							<h1
 								className={` ${
 									isDashboard && "!text-[20px]"
 								} px-5 sm:text-3xl text-lg`}
 							>
-								Users Analytics
+								Thống kê người dùng
 							</h1>
 							{!isDashboard && (
 								<p className='px-5 sm:text-2xl text-base'>
-									Last 12 months analytics data{" "}
+									Số liệu trong 12 tháng vừa qua{" "}
 								</p>
 							)}
 						</div>

@@ -33,9 +33,9 @@ const CourseAnalytics = ({}: CourseAnalyticsProps) => {
 				<Card className='mt-6 '>
 					<div className='h-screen'>
 						<div className='mt-[50px] mx-6'>
-							<h1 className='px-5 sm:text-3xl text-lg'>Courses Analytics</h1>
+							<h1 className='px-5 sm:text-3xl text-lg'>Thống kê số lượng khóa học</h1>
 							<p className='px-5 sm:text-2xl text-base'>
-								Last 12 months analytics data{" "}
+								Dữ liệu trong 12 tháng vừa qua{" "}
 							</p>
 						</div>
 

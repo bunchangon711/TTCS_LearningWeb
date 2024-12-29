@@ -100,7 +100,7 @@ const AllInvoices = ({ isDashboard }: AllInvoicesProps) => {
 				<Box m={isDashboard ? "0" : "40px"}>
 					<Box
 						m={isDashboard ? "0" : "40px 0 0 0"}
-						height={isDashboard ? "35vh" : "90vh"}
+						height={isDashboard ? "45vh" : "90vh"}
 						overflow={"hidden"}
 						sx={{
 							// Update styles based on the current theme
